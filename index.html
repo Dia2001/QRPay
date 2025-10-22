@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mã QR Thanh Toán</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #00b4db, #0083b0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      color: #fff;
+      animation: gradient 8s ease infinite;
+      background-size: 200% 200%;
+      padding: 40px 10px;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .qr-container {
+      background: #fff;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .qr-container img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .qr-container img:hover {
+      transform: scale(1.03);
+    }
+
+    .info {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .info b {
+      color: #fff;
+    }
+
+    footer {
+      margin-top: 35px;
+      font-size: 14px;
+      opacity: 0.85;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 22px; }
+      .qr-container img { max-width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Quét mã để chuyển khoản 💰</h1>
+
+  <div class="qr-grid">
+    <!-- Mã QR tổng hợp -->
+    <div class="card">
+      <div class="qr-container">
+        <img src="./access/qr.jpg" alt="QR Thanh Toán Tổng Hợp" />
+      </div>
+      <div class="info">
+        <b>Mã QR tổng hợp</b><br>
+        Quét để chọn ngân hàng hoặc MoMo.
+      </div>
+    </div>
+
+    <!-- Mã QR BIDV -->
+    <div class="card">
+      <div class="qr-container">
+        <img src="./access/qr_bank.jpg" alt="QR BIDV" />
+      </div>
+      <div class="info">
+        <b>Ngân hàng BIDV</b><br>
+        Chủ TK: <b>NGUYEN VAN DIA</b>
+      </div>
+    </div>
+
+    <!-- Mã QR MoMo -->
+    <div class="card">
+      <div class="qr-container">
+        <img src="./access/qr_momo.jpg" alt="QR MoMo" />
+      </div>
+      <div class="info">
+        <b>Ví MoMo</b><br>
+        Chủ TK: <b>NGUYEN VAN DIA</b>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 QR Payment | Dùng để coppy ảnh khỏi phải tìm abum 😄</footer>
+</body>
+</html>
